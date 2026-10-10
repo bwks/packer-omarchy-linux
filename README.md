@@ -8,6 +8,7 @@ The official ISO installs Omarchy's normal desktop, applications, Btrfs layout,
 and Limine bootloader. Cloud-init is the only extra package requested by this
 project. SSH is enabled and allowed through Omarchy's firewall. NetworkManager
 continues managing networking; cloud-init network rendering is disabled.
+Limine's menu timeout is set to zero to skip its default five-second wait.
 The disk is unencrypted so instances can boot unattended. The `sherpa` and root
 passwords are locked in the final image; supply SSH keys and a desktop password
 through cloud-init. Temporary build keys and password are removed.

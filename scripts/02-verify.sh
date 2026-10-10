@@ -146,6 +146,7 @@ systemctl is-active --quiet sshd NetworkManager && pass "SSH and networking acti
 sudo test -s /etc/ssh/ssh_host_ed25519_key && pass "SSH host keys regenerated"
 sudo awk -F: '$1 == "sherpa" {exit ($2 != "!")}' /etc/shadow && pass "build password removed"
 sudo test ! -e /var/lib/omarchy/provisioning && pass "installer credentials removed"
+sudo grep -qx 'timeout: 0' /boot/limine.conf && pass "Limine menu timeout disabled" || fail "Limine menu timeout remains"
 sudo bash -s <<'SNAPSHOTS'
 set -euo pipefail
 mkdir -p /run/verify-top

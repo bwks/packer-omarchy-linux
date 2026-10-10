@@ -24,6 +24,9 @@ if [[ -f /usr/lib/systemd/system/cloud-init-main.service ]]; then
 fi
 systemctl enable sshd.service
 ufw allow 22/tcp
+# Skip Limine's default five-second menu wait on unattended VMs.
+sed -i -E '/^[[:space:]]*#?[[:space:]]*timeout[[:space:]]*:/Id' /boot/limine.conf
+sed -i '1i timeout: 0' /boot/limine.conf
 # Needed by the remaining Packer provisioners and shutdown; removed on shutdown.
 printf '%s\n' 'sherpa ALL=(ALL) NOPASSWD:ALL' >/etc/sudoers.d/zz-packer-sherpa
 chmod 0440 /etc/sudoers.d/zz-packer-sherpa
