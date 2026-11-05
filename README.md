@@ -1,6 +1,6 @@
 # packer-omarchy-linux
 
-Builds a standard Omarchy 4.0.4 installation for `sherpa`, with cloud-init
+Builds a standard Omarchy 4.5.0 installation for `sherpa`, with cloud-init
 added, as a compressed 40 GiB qcow2 image. Uses the same Packer/QEMU, `http/`,
 and `scripts/` layout as the local `packer-devbox-linux` project.
 
