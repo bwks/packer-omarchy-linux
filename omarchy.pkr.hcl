@@ -32,12 +32,12 @@ variable "build_password_hash" {
 
 variable "iso_url" {
   type    = string
-  default = "https://iso.omarchy.org/omarchy-4.0.4.iso"
+  default = "https://iso.omarchy.org/omarchy-4.5.0-x86.iso"
 }
 
 variable "iso_checksum" {
   type    = string
-  default = "sha256:ddeded2758c48318d201dfdac905ecb28f570441883f0c052ea3cd5d05acf92d"
+  default = "sha256:5d6288bc57f96f6231719830457582c846a2291985201c36a9a7d1216978b00f"
 }
 
 variable "output_dir" {
